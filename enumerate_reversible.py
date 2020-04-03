@@ -7,8 +7,9 @@ def enumerate(iterable, start=0):
             yield from original_enumerate(iterable, start=start)
 
         def __reversed__(self):
+            rev = reversed(iterable)  # First, for accurate exception msg
             rng = range(len(iterable) - 1 + start, -1 + start, -1)
-            yield from zip(rng, reversed(iterable))
+            yield from zip(rng, rev)
 
     return Inner()
 
@@ -18,4 +19,7 @@ if __name__ == "__main__":
         print(i, v)
 
     for i, v in reversed(enumerate(range(3), start=5)):
+        print(i, v)
+
+    for i, v in reversed(enumerate(iter([1, 2, 3]), start=5)):
         print(i, v)
