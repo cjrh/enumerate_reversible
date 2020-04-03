@@ -1,4 +1,3 @@
-import itertools
 original_enumerate = enumerate
 
 
