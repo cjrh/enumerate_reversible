@@ -7,8 +7,8 @@ def enumerate(iterable, start=0):
             yield from original_enumerate(iterable, start=start)
 
         def __reversed__(self):
-            end = len(iterable) - 1 + start
-            yield from ((end - i, v) for i, v in original_enumerate(iterable))
+            rng = range(len(iterable) - 1, -1, -1)
+            yield from ((i + start, iterable[i]) for i in rng)
 
     return Inner()
 
