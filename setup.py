@@ -147,7 +147,7 @@ setup(
     # projects.
     extras_require={  # Optional
         'dev': ['check-manifest', 'twine', 'wheel'],
-        'test': ['coverage', 'pytest', 'pytest-cov'],
+        'test': ['coverage', 'pytest', 'pytest-cov', 'coveralls', 'flake8'],
     },
 
     # If there are data files included in your packages that need to be
