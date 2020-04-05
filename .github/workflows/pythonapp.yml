@@ -35,7 +35,7 @@ jobs:
         PYTHONPATH: .
       run: |
         pip install pytest
-        pytest -v --cov enumerate-reversible tests
+        pytest -v --cov-report xml --cov enumerate-reversible tests
     - name: Extract branch name
       shell: bash
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
@@ -44,4 +44,4 @@ jobs:
       uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        path-to-lcov: .coverage
+        path-to-lcov: coverage.xml
