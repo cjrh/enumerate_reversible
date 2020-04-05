@@ -1,5 +1,5 @@
-.. image:: https://travis-ci.org/cjrh/enumerate_reversible.svg?branch=master
-    :target: https://travis-ci.org/cjrh/enumerate_reversible
+.. image:: https://github.com/cjrh/enumerate_reversible/workflows/Python%20application/badge.svg
+    :target: https://github.com/cjrh/aiomsg/enumerate_reversible
 
 .. image:: https://coveralls.io/repos/github/cjrh/enumerate_reversible/badge.svg?branch=master
     :target: https://coveralls.io/github/cjrh/enumerate_reversible?branch=master
