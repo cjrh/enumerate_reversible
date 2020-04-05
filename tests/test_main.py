@@ -1,3 +1,4 @@
+import sys
 import pytest
 from enumerate_reversible import enumerate as new_enumerate
 
@@ -13,13 +14,6 @@ sequences = [
     tuple(),
     (1, ),
     (1, 2, 3),
-    # Views
-    dict().keys(),
-    dict().values(),
-    dict().items(),
-    dict(a=1, b=2, c=2).keys(),
-    dict(a=1, b=2, c=2).values(),
-    dict(a=1, b=2, c=2).items(),
     # Ranges
     range(0),
     range(3),
@@ -41,6 +35,19 @@ sequences = [
     memoryview(b'a'),
     memoryview(b'abc'),
 ]
+
+
+if sys.version_info >= (3, 8):
+    sequences.extend([
+        # Views
+        dict().keys(),
+        dict().values(),
+        dict().items(),
+        dict(a=1, b=2, c=2).keys(),
+        dict(a=1, b=2, c=2).values(),
+        dict(a=1, b=2, c=2).items(),
+    ])
+
 
 forward_values = [
     (
